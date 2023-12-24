@@ -1,52 +1,46 @@
 import Head from 'next/head';
-import { Box, Container, Stack, Typography, Unstable_Grid2 as Grid } from '@mui/material';
+import { subDays, subHours } from 'date-fns';
+import { Box, Container, Unstable_Grid2 as Grid } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-import { AccountProfile } from 'src/sections/account/account-profile';
-import { AccountProfileDetails } from 'src/sections/account/account-profile-details';
+import { OverviewSales } from 'src/sections/overview/overview-graph';
+
+const now = new Date();
 
 const Page = () => (
   <>
     <Head>
       <title>
-        RenewTech | Account
+        RenewTech | Marketplace
       </title>
     </Head>
     <Box
       component="main"
       sx={{
         flexGrow: 1,
-        py: 8
+        py: 8,
+        position: 'relative',
+        overflow: 'hidden'
       }}
     >
-      <Container maxWidth="lg">
-        <Stack spacing={3}>
-          <div>
-            <Typography variant="h4">
-              Account
-            </Typography>
-          </div>
-          <div>
-            <Grid
-              container
-              spacing={3}
-            >
-              <Grid
-                xs={12}
-                md={6}
-                lg={4}
-              >
-                <AccountProfile />
-              </Grid>
-              <Grid
-                xs={12}
-                md={6}
-                lg={8}
-              >
-                <AccountProfileDetails />
-              </Grid>
-            </Grid>
-          </div>
-        </Stack>
+      <Container maxWidth="xl">
+        <Grid
+          container
+        >
+          <Grid
+            xs={6}
+            lg={6}
+          >
+            <OverviewSales
+              chartSeries={[
+                {
+                  name: 'This week',
+                  data: [34, 42, 41, 36, 38, 30, 33]
+                }
+              ]}
+              sx={{ height: '100%' }}
+            />
+          </Grid>
+        </Grid>
       </Container>
     </Box>
   </>
