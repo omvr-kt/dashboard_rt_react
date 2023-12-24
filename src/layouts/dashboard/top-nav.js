@@ -3,6 +3,9 @@ import BellIcon from '@heroicons/react/24/solid/BellIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import Bars3Icon from '@heroicons/react/24/solid/Bars3Icon';
 import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon';
+import BatteryIcon from '@heroicons/react/24/solid/Battery50Icon';
+import FireIcon from '@heroicons/react/24/solid/FireIcon';
+
 import {
   Avatar,
   Badge,
@@ -72,12 +75,32 @@ export const TopNav = (props) => {
                 </SvgIcon>
               </IconButton>
             </Tooltip>
+            <Tooltip title="Battery">
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <span style={{ fontSize: '15px' }}>66%</span>
+                <IconButton>
+                  <SvgIcon fontSize="small">
+                    <BatteryIcon />
+                  </SvgIcon>
+                </IconButton>
+              </div>
+            </Tooltip>
           </Stack>
           <Stack
             alignItems="center"
             direction="row"
             spacing={2}
           >
+            <Tooltip title="Battery">
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+              <IconButton>
+                  <SvgIcon fontSize="small">
+                    <FireIcon />
+                  </SvgIcon>
+                </IconButton>
+                <span style={{ fontSize: '15px' }}>45°F</span>
+              </div>
+            </Tooltip>
             <Tooltip title="Contacts">
               <IconButton>
                 <SvgIcon fontSize="small">

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
-import ComputerDesktopIcon from '@heroicons/react/24/solid/ComputerDesktopIcon';
-import DeviceTabletIcon from '@heroicons/react/24/solid/DeviceTabletIcon';
-import PhoneIcon from '@heroicons/react/24/solid/PhoneIcon';
+import Heating from '@heroicons/react/24/solid/FireIcon';
+import CakeIcon from '@heroicons/react/24/solid/CakeIcon';
+import Lighting from '@heroicons/react/24/solid/LightBulbIcon';
+import Laundry from '@heroicons/react/24/solid/SparklesIcon';
 import {
   Box,
   Card,
@@ -22,9 +23,10 @@ const useChartOptions = (labels) => {
       background: 'transparent'
     },
     colors: [
-      theme.palette.primary.main,
-      theme.palette.success.main,
-      theme.palette.warning.main
+      '#8c8cff',
+      '#9370db',
+      '#bf7cbf',
+      '#990099'
     ],
     dataLabels: {
       enabled: false
@@ -63,19 +65,24 @@ const useChartOptions = (labels) => {
 };
 
 const iconMap = {
-  Desktop: (
+  Heating: (
     <SvgIcon>
-      <ComputerDesktopIcon />
+      <Heating />
     </SvgIcon>
   ),
-  Tablet: (
+  Kitchen: (
     <SvgIcon>
-      <DeviceTabletIcon />
+      <CakeIcon />
     </SvgIcon>
   ),
-  Phone: (
+  Lighting: (
     <SvgIcon>
-      <PhoneIcon />
+      <Lighting />
+    </SvgIcon>
+  ),
+  Laundry: (
+    <SvgIcon>
+      <Laundry />
     </SvgIcon>
   )
 };
@@ -86,7 +93,7 @@ export const OverviewTraffic = (props) => {
 
   return (
     <Card sx={sx}>
-      <CardHeader title="Traffic Source" />
+      <CardHeader title="Home Power Chart" />
       <CardContent>
         <Chart
           height={300}

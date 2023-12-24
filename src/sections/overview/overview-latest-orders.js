@@ -51,7 +51,7 @@ export const OverviewLatestOrders = (props) => {
             </TableHead>
             <TableBody>
               {orders.map((order) => {
-                const createdAt = format(order.createdAt, 'dd/MM/yyyy');
+                const createdAt = format(order.createdAt, 'dd/12/2023');
 
                 return (
                   <TableRow

@@ -24,7 +24,9 @@ const Page = () => (
       component="main"
       sx={{
         flexGrow: 1,
-        py: 8
+        py: 8,
+        position: 'relative',
+        overflow: 'hidden'
       }}
     >
       <Container maxWidth="xl">
@@ -78,30 +80,12 @@ const Page = () => (
           </Grid>
           <Grid
             xs={12}
-            lg={8}
-          >
-            <OverviewSales
-              chartSeries={[
-                {
-                  name: 'This week',
-                  data: [34, 42, 41, 36, 38, 30, 49]
-                },
-                {
-                  name: 'Last week',
-                  data: [30, 44, 41, 38, 32, 37, 40]
-                }
-              ]}
-              sx={{ height: '100%' }}
-            />
-          </Grid>
-          <Grid
-            xs={12}
             md={6}
             lg={4}
           >
             <OverviewTraffic
-              chartSeries={[63, 15, 22]}
-              labels={['Desktop', 'Tablet', 'Phone']}
+              chartSeries={[23, 27, 18, 32]}
+              labels={['Heating', 'Kitchen', 'Lighting', 'Laundry']}
               sx={{ height: '100%' }}
             />
           </Grid>
@@ -141,6 +125,24 @@ const Page = () => (
                   image: '/assets/products/product-7.png',
                   name: 'Healthcare Ritual',
                   updatedAt: subDays(subHours(now, 5), 6).getTime()
+                }
+              ]}
+              sx={{ height: '100%' }}
+            />
+          </Grid>
+          <Grid
+            xs={12}
+            lg={8}
+          >
+            <OverviewSales
+              chartSeries={[
+                {
+                  name: 'This week',
+                  data: [34, 42, 41, 36, 38, 30, 49]
+                },
+                {
+                  name: 'Last week',
+                  data: [30, 44, 41, 38, 32, 37, 40]
                 }
               ]}
               sx={{ height: '100%' }}
@@ -220,6 +222,32 @@ const Page = () => (
         </Grid>
       </Container>
     </Box>
+    <style jsx global>{`
+  body {
+    background: linear-gradient(-45deg, rgba(58, 102, 192, 0.2), rgba(153, 75, 225, 0.2), rgba(127, 219, 255, 0.2), rgba(170, 77, 200, 0.2));
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    height: 200vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+`}</style>
+
+
   </>
 );
 

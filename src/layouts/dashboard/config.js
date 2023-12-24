@@ -19,6 +19,15 @@ export const items = [
     )
   },
   {
+    title: 'Marketplace',
+    path: '/marketplace',
+    icon: (
+      <SvgIcon fontSize="small">
+        <ShoppingBagIcon />
+      </SvgIcon>
+    )
+  },
+  {
     title: 'Help',
     path: '/help',
     icon: (
