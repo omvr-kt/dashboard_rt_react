@@ -66,22 +66,22 @@ const useChartOptions = (labels) => {
 
 const iconMap = {
   Heating: (
-    <SvgIcon>
+    <SvgIcon style={{ color: '#8c8cff' }}>
       <Heating />
     </SvgIcon>
   ),
   Kitchen: (
-    <SvgIcon>
+    <SvgIcon style={{ color: '#9370db' }}>
       <CakeIcon />
     </SvgIcon>
   ),
   Lighting: (
-    <SvgIcon>
+    <SvgIcon style={{ color: '#bf7cbf' }}>
       <Lighting />
     </SvgIcon>
   ),
   Laundry: (
-    <SvgIcon>
+    <SvgIcon style={{ color: '#990099' }}>
       <Laundry />
     </SvgIcon>
   )
