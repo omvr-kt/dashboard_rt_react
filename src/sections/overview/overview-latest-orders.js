@@ -81,6 +81,7 @@ export const OverviewLatestOrders = (props) => {
       </Scrollbar>
       <Divider />
       <CardActions sx={{ justifyContent: 'flex-end' }}>
+      <a href="../../marketplace" style={{ textDecoration: 'none', color: 'inherit' }}>
         <Button
           color="inherit"
           endIcon={(
@@ -91,8 +92,9 @@ export const OverviewLatestOrders = (props) => {
           size="small"
           variant="text"
         >
-          View all
+            View all
         </Button>
+      </a>
       </CardActions>
     </Card>
   );
