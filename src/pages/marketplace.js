@@ -45,7 +45,7 @@ const Page = () => (
               sx={{ height: '100%' }}
               value="56.8 kWh"
               icon={CurrencyDollarIcon}
-              texttop="Total Buyed"
+              texttop="Total Bought"
               color="error.main"
               textbottom="average purchase price"
               icon2={ArrowsRightLeftIcon}
@@ -62,7 +62,7 @@ const Page = () => (
               sx={{ height: '100%' }}
               value="26.7 kWh"
               icon={ShoppingCartIcon}
-              texttop="Total selled"
+              texttop="Total Sold"
               color="success.main"
               textbottom="average selling price"
               icon2={ArrowsRightLeftIcon}
