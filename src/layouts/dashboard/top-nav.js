@@ -127,9 +127,9 @@ export const TopNav = (props) => {
               sx={{
                 cursor: 'pointer',
                 height: 40,
-                width: 40
+                width: 40,
               }}
-              src="/assets/avatars/avatar-cao-yu.png"
+              src="/favicon-32x32 copie.png"
             />
           </Stack>
         </Stack>

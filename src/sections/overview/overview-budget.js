@@ -1,11 +1,8 @@
 import PropTypes from 'prop-types';
-import ArrowDownIcon from '@heroicons/react/24/solid/ArrowDownIcon';
-import ArrowUpIcon from '@heroicons/react/24/solid/ArrowUpIcon';
-import CurrencyDollarIcon from '@heroicons/react/24/solid/CurrencyDollarIcon';
 import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
 
 export const OverviewBudget = (props) => {
-  const { difference, positive = false, sx, value } = props;
+  const { difference, positive = false, negative, sx, value, icon: IconComponent, texttop, color, textbottom, icon2: IconComponent2 } = props;
 
   return (
     <Card sx={sx}>
@@ -17,11 +14,8 @@ export const OverviewBudget = (props) => {
           spacing={3}
         >
           <Stack spacing={1}>
-            <Typography
-              color="text.secondary"
-              variant="overline"
-            >
-              Usage this month
+            <Typography color="text.secondary" variant="overline">
+              {texttop}
             </Typography>
             <Typography variant="h4">
               {value}
@@ -29,13 +23,13 @@ export const OverviewBudget = (props) => {
           </Stack>
           <Avatar
             sx={{
-              backgroundColor: 'error.main',
+              backgroundColor: color,
               height: 56,
               width: 56
             }}
           >
             <SvgIcon>
-              <CurrencyDollarIcon />
+              {IconComponent && <IconComponent />}
             </SvgIcon>
           </Avatar>
         </Stack>
@@ -55,31 +49,47 @@ export const OverviewBudget = (props) => {
                 color={positive ? 'success' : 'error'}
                 fontSize="small"
               >
-                {positive ? <ArrowUpIcon /> : <ArrowDownIcon />}
+                 {IconComponent2 && <IconComponent2 />}
               </SvgIcon>
               <Typography
                 color={positive ? 'success.main' : 'error.main'}
                 variant="body2"
               >
-                {difference}%
+                {difference}{negative ? '$' : '%'}
               </Typography>
             </Stack>
-            <Typography
-              color="text.secondary"
-              variant="caption"
-            >
-              Since last month
+            <Typography color="text.secondary" variant="caption">
+              {textbottom}
             </Typography>
           </Stack>
+        )}
+        {!difference && (
+          <Stack
+          alignItems="center"
+          direction="row"
+          spacing={2}
+          sx={{ mt: 2 }}
+        >
+          <Stack
+            alignItems="center"
+            direction="row"
+            spacing={0.5}
+          >
+        <Typography color="text.secondary" variant="caption">
+              {textbottom}
+        </Typography>
+        </Stack>
+        </Stack>
         )}
       </CardContent>
     </Card>
   );
 };
 
-OverviewBudget.prototypes = {
+OverviewBudget.propTypes = {
   difference: PropTypes.number,
   positive: PropTypes.bool,
   sx: PropTypes.object,
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
+  icon: PropTypes.elementType,
 };

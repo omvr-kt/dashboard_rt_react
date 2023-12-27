@@ -26,7 +26,7 @@ const states = [
   },
   {
     value: 'los-angeles',
-    label: 'Los Angeles'
+    label: 'Las Vegas'
   }
 ];
 

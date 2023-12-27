@@ -10,6 +10,8 @@ import { OverviewTasksProgress } from 'src/sections/overview/overview-tasks-prog
 import { OverviewTotalCustomers } from 'src/sections/overview/overview-total-customers';
 import { OverviewTotalProfit } from 'src/sections/overview/overview-total-profit';
 import { OverviewTraffic } from 'src/sections/overview/overview-traffic';
+import CurrencyDollarIcon from '@heroicons/react/24/solid/CurrencyDollarIcon';
+import ArrowUpIcon from '@heroicons/react/24/solid/ArrowUpIcon';
 
 const now = new Date();
 
@@ -44,6 +46,11 @@ const Page = () => (
               positive
               sx={{ height: '100%' }}
               value="310 kWh"
+              icon={CurrencyDollarIcon}
+              texttop="Usage this month"
+              color="red"
+              textbottom="Since last month"
+              icon2={ArrowUpIcon}
             />
           </Grid>
           <Grid

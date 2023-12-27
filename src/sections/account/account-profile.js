@@ -11,7 +11,7 @@ import {
 
 const user = {
   avatar: '/assets/avatars/avatar-cao-yu.png',
-  city: 'Los Angeles',
+  city: 'Las Vegas',
   country: 'USA',
   jobTitle: 'Senior Developer',
   name: 'Renew Tech',
