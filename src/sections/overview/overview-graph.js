@@ -112,6 +112,7 @@ export const OverviewSales = (props) => {
     <Card sx={sx}>
       <CardHeader
         title="KWh Price"
+        sx={{ mb: -5 }} 
       />
       <CardContent>
         <Chart
