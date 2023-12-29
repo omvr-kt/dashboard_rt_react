@@ -96,21 +96,20 @@ const Page = () => (
           </Grid>
           <Grid
             xs={12}
-            sm={4}
+            sm={3}
             lg={3}
           >
-            <div style={{ height: '5%', marginBottom: '2.5%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>Price USD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Quantity (kWh)</div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', margin: 0, boxSizing: 'border-box' }}>
+            <div style={{ marginTop:'5%', display: 'flex', justifyContent: 'space-between', margin: 0, boxSizing: 'border-box' }}>
               <OverviewOrderBook isBuy={false} position="left" />
               <OverviewOrderBook isBuy={false} position="right" />
             </div>
-            <div style={{ height: '5%', marginBottom: '2.5%', marginTop: '2.5%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>BUY / SELL</div>
+            <div style={{ height: '5%', marginBottom: '5%', display: 'flex', alignItems: 'center', justifyContent: '', fontWeight: 'bold' }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price USD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantity (kWh)</div>
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: 0, boxSizing: 'border-box' }}>
               <OverviewOrderBook isBuy={true} position="left" />
               <OverviewOrderBook isBuy={true} position="right" />
             </div>
           </Grid>
-          <Grid item xs={12} lg={6}>
+          <Grid item xs={7} lg={6}>
             {/* Composant du graphique "OverviewSales" */}
             <OverviewSales
               chartSeries={[
@@ -119,12 +118,11 @@ const Page = () => (
                   data: [34, 42, 41, 36, 38, 30, 33]
                 }
               ]}
-              sx={{ height: '100%' }}
+              sx={{ height: '90%' }}
             />
           </Grid>
 
-          <Grid item xs={12} lg={6}>
-            {/* Composant pour passer un ordre d'achat ou de vente "OrderComponent" */}
+          <Grid item xs={2} lg={2}>
             <OrderComponent />
           </Grid>
         </Grid>

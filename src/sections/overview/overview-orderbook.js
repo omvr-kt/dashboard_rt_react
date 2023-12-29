@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Box } from '@mui/material';
 
 const OverviewOrderBook = ({ isBuy, position }) => {
-  const [values, setValues] = useState(Array.from({ length: 10 }, () => Array.from({ length: 10 }, () => getRandomNumber(position))));
+  const [values, setValues] = useState(Array.from({ length: 7 }, () => Array.from({ length: 8 }, () => getRandomNumber(position))));
 
   function getRandomNumber(position) {
     if (position === 'left') {
@@ -39,8 +39,8 @@ const OverviewOrderBook = ({ isBuy, position }) => {
         <Box
           key={colIndex}
           sx={{
-            flex: '0 0 10%',
-            height: '10%',
+            flex: '0 0 12%',
+            height: '12%',
             backgroundColor: isBuy
               ? `rgba(0, 128, 0, ${value / 100})` // Vert avec opacité basée sur la valeur
               : `rgba(255, 0, 0, ${value / 100})`, // Rouge avec opacité basée sur la valeur
