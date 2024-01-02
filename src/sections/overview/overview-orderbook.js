@@ -8,7 +8,7 @@ const OverviewOrderBook = ({ isBuy, position }) => {
   function getRandomNumber(position) {
     if (position === 'left') {
       // Génère des valeurs entre 0 et 0.18 si la position est 'left'
-      return Math.random() * 0.18;
+      return 0.15 + Math.random() * 0.05;
     } else {
       // Génère des valeurs entre 0 et 100 si la position est 'right'
       return Math.floor(Math.random() * 100) + 1;
@@ -52,7 +52,7 @@ const OverviewOrderBook = ({ isBuy, position }) => {
             color: '#000',
           }}
         >
-          {position === 'left' ? value.toFixed(2) : value}
+          {position === 'left' ? value.toFixed(3) : value}
           </Box>
       ))}
     </Box>
