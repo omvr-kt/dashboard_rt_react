@@ -5,6 +5,7 @@ import Bars3Icon from '@heroicons/react/24/solid/Bars3Icon';
 import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon';
 import BatteryIcon from '@heroicons/react/24/solid/Battery50Icon';
 import FireIcon from '@heroicons/react/24/solid/FireIcon';
+import React, { useState, useEffect } from 'react';
 
 import {
   Avatar,
@@ -27,6 +28,47 @@ export const TopNav = (props) => {
   const { onNavOpen } = props;
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   const accountPopover = usePopover();
+
+  const [batteryPercentage, setBatteryPercentage] = useState(98);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Decrease battery percentage by 1 every minute
+      setBatteryPercentage((prevPercentage) => {
+        const newPercentage = prevPercentage - 1;
+
+        // Reset to 98% when it reaches 23%
+        if (newPercentage <= 23) {
+          return 98;
+        }
+
+        return newPercentage;
+      });
+    }, 60000); // 60000 milliseconds = 1 minute
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const [temperature, setTemperature] = useState(45);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Randomly increase or decrease temperature by 1
+      setTemperature((prevTemperature) => {
+        const randomChange = Math.random() > 0.5 ? 1 : -1;
+        const newTemperature = prevTemperature + randomChange;
+
+        // Reset to 45 when the difference is greater than 20
+        if (Math.abs(newTemperature - 45) > 20) {
+          return 45;
+        }
+
+        return newTemperature;
+      });
+    }, 5000); // 5000 milliseconds = 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -77,7 +119,7 @@ export const TopNav = (props) => {
             </Tooltip>
             <Tooltip title="Battery">
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <span style={{ fontSize: '15px' }}>66%</span>
+              <span style={{ fontSize: '15px' }}>{`${batteryPercentage}%`}</span>
                 <IconButton>
                   <SvgIcon fontSize="small">
                     <BatteryIcon />
@@ -98,7 +140,7 @@ export const TopNav = (props) => {
                     <FireIcon />
                   </SvgIcon>
                 </IconButton>
-                <span style={{ fontSize: '15px' }}>45°F</span>
+                <span style={{ fontSize: '15px' }}>{`${temperature}°F`}</span>
               </div>
             </Tooltip>
             <Tooltip title="Contacts">

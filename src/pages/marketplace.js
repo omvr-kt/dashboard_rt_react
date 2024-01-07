@@ -162,6 +162,7 @@ const OrderComponent = () => {
         <InputLabel htmlFor="price">Price (USD)</InputLabel>
         <Input id="price" type="number" />
       </FormControl>
+      <br></br><br></br>
       <Button type="submit" variant="contained" color="primary">
         Submit Order
       </Button>
